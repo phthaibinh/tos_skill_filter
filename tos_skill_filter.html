@@ -223,14 +223,24 @@
         $(".filter-row").html(function()
         {
             var str = $(".filter-row").html();
+			var i = 0;
             for(var x of skill_type_string)
             {
+				i = 0;
                 str += "<div class=\"row skill-group\">";
                 for(var s of x)
                 {
-                    str += "<div class=\"col-sm-2 filter-btn\"\">";
-                    str += s;
-                    str += "</div>";
+					if (i == 0)
+					{
+						str += s;
+					}
+					else
+                    {
+						str += "<div class=\"col-sm-2 filter-btn\"\">";
+						str += s;
+						str += "</div>";
+					}
+					i++;
                 }
                 str += "</div>";
             }
